@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h1>{{post.title}}</h1>
+
+
+<style>
+.img-article-mid {
+    margin: 10px auto 20px;
+    display: block;
+    border: 3px solid #000000;
+}
+</style>
+
+
+{% if post.photo %}
+<p><img class="img-article-mid" src="{{post.photo.url}}"></p>
+{% endif %}
+
+{{post.content|linebreaks}}
+{% endblock %}
